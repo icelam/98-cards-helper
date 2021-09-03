@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.1](https://github.com/icelam/98-cards-helper/compare/v1.0.0...v1.0.1) (2021-09-03)
+
+
+### Bug Fixes
+
+* styling issue on iOS safari ([7681b63](https://github.com/icelam/98-cards-helper/commit/7681b63dbab576e9e7951ee568db9bc2f9b7138e))
+
 ## 1.0.0 (2021-09-03)
 
 
