@@ -1,6 +1,6 @@
 {
   "name": "98-cards-helper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple web app which helps you to keep track of your remaining cards when playing 98 cards.",
   "private": true,
   "scripts": {
