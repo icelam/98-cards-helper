@@ -1,0 +1,43 @@
+//- Mixins
+include ../mixins/modal.pug
+
+//- Title
+h1.title 98 Cards Helper
+
+//- Squares
+form.square-section
+  .square-group
+    - var n = 0;
+    while n < 100
+      - n++
+        if (n === 1 || n === 100)
+          input.checkbox(type="checkbox"  checked="checked" disabled="disabled" id="checkbox" + n)
+        else
+          input.checkbox(type="checkbox" id="checkbox" + n)
+        label.square(for="checkbox" + n)
+
+  input.button.button--danger(type="reset" value="Clear Cards")
+
+//- Footer
+.footer
+  +modal('about')
+    +slot('label').
+      About this website
+
+    +slot('title').
+      About
+
+    +slot('body')
+      p.
+        98 Cards is a single play card game which player attempts sort and place 98 cards into 4 piles.
+      p.
+        You can get the game at:
+      ul
+        li.
+          #[a(href="https://play.google.com/store/apps/details?id=com.vdh.ninetyeight.android" target="_blank" rel="noopener noreferrer") Android Version]
+        li.
+          #[a(href="https://itunes.apple.com/us/app/98-cards/id1234430446" target="_blank" rel="noopener noreferrer") iOS Version]
+      p.
+        This website can help you to keep track of your remaining cards when playing the game. Click on any of the numbers to mark it as a placed card. To undo, simply click on the number again.
+  span ・
+  a(href="https://github.com/icelam/98-cards-helper" target="_blank" rel="noopener") GitHub

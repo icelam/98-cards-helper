@@ -1,0 +1,92 @@
+@import './mixins/button-reset';
+
+$color-modal-background: $color-white;
+$color-modal-border: $color-black;
+$color-modal-shadow: $color-black;
+
+$modal-close-button-size: 1.5rem;
+$modal-close-button-stroke-width: 0.375rem;
+$color-modal-close-button-stroke: $color-black;
+
+// Since Safari 14.0.2 does not support css rules
+// &::backdrop, & + .backdrop
+@mixin backdrop-styles {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(0.1875rem);
+}
+
+.modal{
+  text-align: left;
+  padding: 1rem 1.5rem;
+  background-color: $color-modal-background;
+  border: 0.25rem solid $color-modal-border;
+  box-shadow: 0.25rem 0.25rem $color-modal-shadow;
+  width: 90%;
+  max-width: 500px;
+  box-sizing: border-box;
+
+  &::backdrop {
+    @include backdrop-styles;
+  }
+
+  // polyfill
+  & + .backdrop {
+    @include backdrop-styles;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  p, ul {
+    margin: 0;
+  }
+
+  * + p,
+  * + ul {
+    margin: 1rem 0 0 0;
+  }
+
+  &__header {
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin: 0 0 1rem 0;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+
+  &__close-button {
+    @include button-reset;
+    vertical-align: middle;
+    width: $modal-close-button-size;
+    height: $modal-close-button-size;
+
+    &:before, &:after {
+      position: absolute;
+      top: 0;
+      left: math.div($modal-close-button-size, 2) - math.div($modal-close-button-stroke-width, 2);
+      content: ' ';
+      height: $modal-close-button-size;
+      width: $modal-close-button-stroke-width;
+      border-radius: math.div($modal-close-button-stroke-width, 2);
+      background-color: $color-modal-close-button-stroke;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+
+    > span {
+      display: none;
+    }
+  }
+}

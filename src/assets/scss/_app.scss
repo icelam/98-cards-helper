@@ -1,0 +1,105 @@
+@import './mixins/button-reset';
+
+$square-group-size: 100%;
+
+$square-group-border-width: 0.25rem;
+$color-square-group-border: $color-black;
+$color-square-group-shadow: $color-black;
+
+$color-square-background: $color-white;
+$color-square-checked-background: $color-blue;
+$color-square-disabled-text: $color-white;
+
+$color-square-text: $color-black;
+$color-square-checked-text: $color-white;
+$color-square-disabled-background: $color-red;
+
+.square-section {
+  display: block;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.square-group {
+  margin: 0 0 1.5rem;
+  counter-reset: grid-id;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: $square-group-border-width;
+  padding: $square-group-border-width;
+  width: $square-group-size;
+  box-sizing: border-box;
+  background-color: $color-square-group-border;
+  box-shadow: $square-group-border-width $square-group-border-width $color-square-group-shadow;
+
+  .square {
+    background-color: $color-square-background;
+    color: $color-square-text;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc($square-group-size / 10 / 3);
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0;
+
+    &:after {
+      content: ' ';
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    &:before {
+      counter-increment: grid-id;
+      content: counter(grid-id);
+    }
+  }
+
+  .checkbox {
+    display: none;
+  }
+
+  .checkbox:checked + .square {
+    background-color: $color-square-checked-background;
+    color: $color-square-checked-text;
+  }
+
+  .checkbox[disabled] + .square {
+    cursor: not-allowed;
+    background-color: $color-square-disabled-background;
+    color: $color-square-disabled-text;
+  }
+}
+
+$color-footer-link: shade($color-yellow, 20%);
+$color-footer-link-hover: shade($color-yellow, 30%);
+$color-footer-link-active: shade($color-yellow, 50%);
+
+.footer {
+  color: $color-footer-link;
+  text-align: center;
+  margin: 2rem 0 0;
+  font-size: 0.875rem;
+
+  > * {
+    vertical-align: middle;
+  }
+
+  #about-button {
+    @include button-reset;
+  }
+
+  > a, #about-button {
+    color: $color-footer-link;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-footer-link-hover;
+    }
+
+    &:active {
+      color: $color-footer-link-active;
+    }
+  }
+}

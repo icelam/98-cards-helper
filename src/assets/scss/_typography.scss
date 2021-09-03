@@ -1,0 +1,15 @@
+$title-stroke-width: 4;
+$color-title-stroke: $color-black;
+
+$color-title-text: $color-white;
+
+.title {
+  font-size: 2.5rem;
+  font-weight: normal;
+  text-align: center;
+  text-shadow:
+    text-outline($title-stroke-width, $color-title-stroke),
+    oblique-text-shadow($title-stroke-width, $title-stroke-width, $color-title-stroke);
+  color: $color-title-text;
+  margin: 0 0 1.25rem 0;
+}

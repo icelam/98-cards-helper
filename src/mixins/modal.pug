@@ -1,0 +1,26 @@
+mixin modal(id, addButtonStyle)
+  - var slots = {};
+
+  mixin slot(name)
+    - slots[name] = block
+
+  block
+
+  button(id=id+"-button" class={'button': addButtonStyle === true, 'button--info': addButtonStyle === true})
+    if slots['label']
+      - slots['label']();
+    else
+      | Open Modal
+
+  dialog.modal(id=id+"-modal")
+    .modal__header
+      button.modal__close-button(id=id+"-modal-close-button")
+        span close
+
+      if slots['title']
+        h3.modal__title
+          - slots['title']();
+
+    .modal__body
+      if slots['body']
+        - slots['body']();
