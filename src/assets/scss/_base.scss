@@ -1,6 +1,13 @@
 $color-background: lighten($color-yellow, 15%);
 $color-background-pattern: $color-yellow;
 
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-text-size-adjust: 100%;
+}
+
 html,
 body {
   height: 100%;
