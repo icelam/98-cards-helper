@@ -1,22 +1,29 @@
 # Changelog
 
+## [1.2.0](https://github.com/icelam/98-cards-helper/compare/v1.1.0...v1.2.0) (2022-04-26)
+
+
+### Features
+
+* update content security policy ([7302bf2](https://github.com/icelam/98-cards-helper/commit/7302bf2dce02e1d7a7ee956730f7d48ecf387557))
+
 ## [1.1.0](https://github.com/icelam/98-cards-helper/compare/v1.0.1...v1.1.0) (2022-03-25)
 
 
 ### Features
 
-* update content security policy ([7ab70d4](https://github.com/icelam/98-cards-helper/commit/7ab70d43ae99457540831eb02b1e613bb604b343))
+* update content security policy ([5966b64](https://github.com/icelam/98-cards-helper/commit/5966b64b800992dc8dc831f7227374777387f60c))
 
 ### [1.0.1](https://github.com/icelam/98-cards-helper/compare/v1.0.0...v1.0.1) (2021-09-03)
 
 
 ### Bug Fixes
 
-* styling issue on iOS safari ([7681b63](https://github.com/icelam/98-cards-helper/commit/7681b63dbab576e9e7951ee568db9bc2f9b7138e))
+* styling issue on iOS safari ([8d0697e](https://github.com/icelam/98-cards-helper/commit/8d0697e0e664a99f0f314e7d39e1f8e482a025ad))
 
 ## 1.0.0 (2021-09-03)
 
 
 ### Features
 
-* initial version of 98 cards helper ([448ad70](https://github.com/icelam/98-cards-helper/commit/448ad706a65425400070c174ce2e343946429505))
+* initial version of 98 cards helper ([7c5983b](https://github.com/icelam/98-cards-helper/commit/7c5983ba178270e6b05a8bf92af4d26fcaa5a430))
