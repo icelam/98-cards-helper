@@ -12,19 +12,19 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@main
+        uses: actions/checkout@v3
       - name: Setup Node.js version
-        uses: actions/setup-node@main
+        uses: actions/setup-node@v3
         with:
-          node-version: 12.16.1
+          node-version-file: '.nvmrc'
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
+        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
       - name: Restore yarn cache
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
@@ -38,7 +38,7 @@ jobs:
         run: |
           yarn build
       - name: Archive build artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: dist # artifacts zip name
           path: |
