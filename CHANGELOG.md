@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.1](https://github.com/icelam/98-cards-helper/compare/v1.2.0...v1.2.1) (2023-01-14)
+
+
+### Bug Fixes
+
+* adjust content security policy to allow google fonts ([ca08532](https://github.com/icelam/98-cards-helper/commit/ca08532858a3cf700ffb5fe335771aac647ede6f))
+
 ## [1.2.0](https://github.com/icelam/98-cards-helper/compare/v1.1.0...v1.2.0) (2022-04-26)
 
 
